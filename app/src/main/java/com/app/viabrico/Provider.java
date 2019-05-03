@@ -1,6 +1,7 @@
 package com.app.viabrico;
+import java.io.Serializable;
 
-public class Provider {
+public class Provider implements Serializable {
     public int id;
     public String name;
     public String description;

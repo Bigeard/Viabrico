@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.ProviderViewHolder>
@@ -122,8 +121,9 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.Provid
             switch (view.getId()) {
                 case R.id.provider_edit:
                     Provider provider_edit = getProviderPosition(this.getLayoutPosition());
+                    Log.i("bigeard", provider_edit.name);
                     Intent intent = new Intent(view.getContext(), PutActivity.class);
-                    intent.putExtra("provider", (Serializable) provider_edit);
+                    intent.putExtra("provider", provider_edit);
                     view.getContext().startActivity(intent);
                     break;
                 case R.id.provider_delete:
