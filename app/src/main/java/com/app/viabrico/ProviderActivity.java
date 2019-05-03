@@ -1,10 +1,12 @@
 package com.app.viabrico;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
@@ -22,24 +24,29 @@ import cz.msebera.android.httpclient.Header;
 public class ProviderActivity extends AppCompatActivity {
 
     // Constantes :
-    private static final String LIEN = "http://s519716619.onlinehome.fr/exchange/madrental/get-vehicules.php";
+    private static final String LIEN = "https://srm-viabrico.herokuapp.com/api/providers";
 
     // Vues :
     private RecyclerView recyclerView = null;
-
 
     // Adapter :
     private ProviderAdapter ProviderAdapter = null;
 
     private List<Provider> listProvider = new ArrayList<>();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_provider);
+    public void goToPost(View view) {
+        Intent intent = new Intent(this, PostActivity.class);
+        startActivity(intent);
+    }
 
+    public void getAll() {
+        listProvider.clear();
+        setContentView(R.layout.activity_provider);
+        Log.i("Bigeard", "COCUOU");
         // client HTTP :
         AsyncHttpClient client = new AsyncHttpClient();
+        client.setConnectTimeout(60000);
+        client.setResponseTimeout(60000);
 
         // paramètres :
         RequestParams requestParams = new RequestParams();
@@ -88,5 +95,11 @@ public class ProviderActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getAll();
     }
 }

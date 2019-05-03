@@ -25,4 +25,5 @@ public class Provider {
         this.phone = phone;
         this.mail = mail;
     }
+
 }

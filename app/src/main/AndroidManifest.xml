@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProviderActivity"></activity>
+        <activity android:name=".PutActivity"></activity>
+        <activity android:name=".PostActivity" />
+        <activity android:name=".ProviderActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

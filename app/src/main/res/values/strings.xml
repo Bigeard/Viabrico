@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Viabrico</string>
+    <string name="title_activity_provider2">ProviderActivity2</string>
 </resources>
