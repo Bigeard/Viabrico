@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/title"
-            android:text="PUT"
+            android:text="Edit Provider"
             android:textSize="32dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
