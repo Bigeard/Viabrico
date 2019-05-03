@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_header_selector"
     tools:context=".PostActivity">
 
     <LinearLayout
@@ -68,7 +69,8 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:onClick="submit"/>
+            android:onClick="submit"
+            android:background="@drawable/round_button" />
 
     </LinearLayout>
 

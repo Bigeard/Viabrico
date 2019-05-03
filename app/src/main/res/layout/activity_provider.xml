@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_header_selector"
     tools:context=".ProviderActivity">
 
     <Button
@@ -11,11 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
+        android:layout_margin="10dp"
+        android:width="180dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="goToPost"
-        />
+        android:background="@drawable/round_button" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list_providers"
